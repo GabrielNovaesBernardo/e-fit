@@ -1,0 +1,5 @@
+.elemento-oculto {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+}

@@ -1,0 +1,104 @@
+:root {
+    --verde: #1A3327;
+    --verde-escuro: #0C1717;
+    --verde-claro: #08A57C;
+    --branco: #F2F6F2;
+
+    --amarelo-tabela-IMC: #e6d012;
+    --verde-tabela-IMC: #276648;
+    --laranja-tabela-IMC: #FF7A00;
+    --vermelho-tabela-IMC: #FF2525;
+}
+
+
+.container-treino {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+.exercicios, .receitas{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.568) 50%, transparent 80%), url(../../images/braço.webp);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding-top: 100px;
+}
+
+#abdomen {
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/abdômen.jpg);
+}
+
+#superiores {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/braço.webp);
+}
+
+#perna {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/pernas.jpg);
+}
+
+#peito {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/peito.webp);
+}
+
+
+#cafe-manha {
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/cafeManha.jpeg);
+}
+
+#almoco {
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/almoço.jpeg);
+}
+
+#lanche-tarde {
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/lancheTarde.jpeg);
+}
+
+#jantar {
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/jantar.jpeg);
+}
+
+#ceia {
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.733) 40%, transparent 80%), url(../../images/ceia.jpeg);
+}
+
+.exercicios article, .receitas article {
+    max-width: 800px;
+    width: 100%;
+    color: #fff;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: var(--verde-claro);
+    border: none;
+}
+
+
+.btn-primary:hover {
+    background-color: var(--verde-tabela-IMC);
+}
+
+.nav-pills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.texto-apresentacao-body {
+    max-width: 600px;
+    width: 100%;
+}

@@ -1,0 +1,197 @@
+:root {
+    --verde: #1A3327;
+    --verde-escuro: #0C1717;
+    --verde-claro: #08A57C;
+    --branco: #F2F6F2;
+    --cinza: #D9D9D9;
+
+    --amarelo-tabela-IMC: #EAD200;
+    --verde-tabela-IMC: #276648;
+    --laranja-tabela-IMC: #FF7A00;
+    --vermelho-tabela-IMC: #FF2525;
+}
+
+
+.contTabelaIMC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    height: 100vh;
+    gap: 30px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+
+.tabelaIMC {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px hsla(0, 0%, 0%, 0.466);
+}
+
+.IMC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 120px;
+    color: var(--branco);
+}
+
+.IMC h2 {
+    font-size: 22px;
+}
+
+#abaixoPeso { 
+    background-color: var(--amarelo-tabela-IMC);
+    border-radius: 10px 0 0 10px;
+}
+
+
+#pesoIdeal {
+    background-color: var(--verde-tabela-IMC);
+}
+
+#sobrepeso {
+    background-color: var(--laranja-tabela-IMC);
+}
+
+#obeso {
+    background-color: var(--vermelho-tabela-IMC);
+    border-radius: 0 10px 10px 0;
+}
+
+
+.informacoesUsuario {
+    display: flex;
+    justify-content: space-between;
+    width: 880px;
+}
+
+.dadosUsuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 257px;
+    height: 165px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.466);
+}
+
+.dadosUsuario > h2 {
+    color: var(--verde-claro);
+    font-size: 22px !important;
+}
+
+.dadosUsuario > p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--verde-escuro);
+}
+
+
+.infImcRetornado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 880px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.466);
+
+    color: var(--branco);
+}
+
+#textoImcRetornado {
+    width: 820px;
+    font-size: 25px;
+    font-weight: 600px;
+    text-align: justify;
+}
+
+#tituloImcRetornado {
+    font-size: 35px;
+}
+
+
+@media screen and (max-width: 940px) {
+    .IMC {
+        width: 175px;
+    }
+
+    .IMC > h2 {
+        font-size: 20px;
+    }
+
+    .IMC > p {
+        font-size: 16px !important;
+    }
+
+    .informacoesUsuario {
+        max-width: 700px;
+        width: 100%;
+    }
+
+    .dadosUsuario {
+        border: none;
+        box-shadow: none;
+    }
+
+    #cardAlturaUsuario {
+        border-left: solid rgba(0, 0, 0, 0.253);
+        border-right: solid rgba(0, 0, 0, 0.253);
+        border-radius: 0;
+    }
+
+    .infImcRetornado {
+        max-width: 700px;
+        width: 100%;
+        padding: 50px;
+    }
+
+    #tituloImcRetornado {
+        font-size: 30px;
+    }
+
+    #textoImcRetornado {
+        max-width: 600px;
+        width: 100%;
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 730px) {
+    .IMC {
+        width: 100px;
+    }
+
+    .IMC > h2 {
+        font-size: 16px;
+        text-align: center;
+        font-weight: 800;
+    }
+
+    .IMC > p {
+        font-size: 12px !important;
+    }
+
+    .dadosUsuario {
+        height: 80px;
+    }
+
+    .dadosUsuario > h2 {
+        color: var(--verde-claro);
+        font-size: 16px !important;
+    }
+
+    .infImcRetornado {
+        padding: 20px;
+    }
+}

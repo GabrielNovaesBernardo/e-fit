@@ -1,0 +1,40 @@
+:root {
+    --verde: #1A3327;
+    --verde-escuro: #0C1717;
+    --verde-claro: #08A57C;
+    --branco: #F2F6F2;
+
+    --amarelo-tabela-IMC: #EAD200;
+    --verde-tabela-IMC: #276648;
+    --laranja-tabela-IMC: #FF7A00;
+    --vermelho-tabela-IMC: #FF2525;
+}
+
+body {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Epilogue", sans-serif;
+}
+
+.nav-pills .nav-link.active{
+    background-color: #08A57C;
+    
+}
+
+.nav-pills .nav-link {
+    color: #08A57C;
+}
+
+
+p {
+    font-size:  18px !important;
+}
+
+
+
+
+  

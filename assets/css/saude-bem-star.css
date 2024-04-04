@@ -1,0 +1,28 @@
+.saude-bem-star {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #08A57C;
+    margin-bottom: 50px;
+}
+
+.saude-bem-star > div {
+    width: 350px;
+    height: 400px;
+    background-image: url(../../images/pexels-photo-3799283.webp);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.saude-bem-star article {
+    width: 1000px;
+    text-align: justify;
+    font-size: 16px;
+    color: #fff;
+    text-shadow: none;
+}
