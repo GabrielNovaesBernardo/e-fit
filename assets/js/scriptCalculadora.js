@@ -1,8 +1,10 @@
+// Função responsavel pelo calculo do imc
+//ela tambem retorna o IMC
 function calcularIMC(peso, altura) {
     let imc = peso / ((altura / 100) * (altura / 100));
     return  imc;
 }
-
+// funções que mostram os resultados de IMC
 function mostrarResultadoIMC(imc) {
     
     let inputAlturaUsuario = document.querySelector('#inputAltura').value;
@@ -13,7 +15,7 @@ function mostrarResultadoIMC(imc) {
     let containerIMC = document.querySelector('.infImcRetornado');
     let tituloIMC = document.querySelector('#tituloImcRetornado');
     let textoIMC = document.querySelector('#textoImcRetornado');
-
+    // acabixo do peso
     if (imc < 18.5) {
         imcUsuario.innerHTML = imc.toFixed(2);
         alturaUsuario.innerHTML = (inputAlturaUsuario / 100).toFixed(2);
@@ -21,6 +23,7 @@ function mostrarResultadoIMC(imc) {
         containerIMC.style.backgroundColor = 'var(--amarelo-tabela-IMC)';
         tituloIMC.innerHTML = 'Abaixo do Peso';
         textoIMC.innerHTML = 'Estar abaixo do peso pode parecer inofensivo, mas traz riscos à saúde. Fraqueza muscular, fadiga constante e maior suscetibilidade a doenças são apenas alguns dos problemas enfrentados por quem está abaixo do peso. Busque orientação médica para desenvolver uma dieta balanceada e ganhar peso de forma saudável.';
+    //peso ideal    
     } else if (imc < 24.9) {
         imcUsuario.innerHTML = imc.toFixed(2);
         alturaUsuario.innerHTML = (inputAlturaUsuario / 100).toFixed(2);
@@ -28,6 +31,7 @@ function mostrarResultadoIMC(imc) {
         containerIMC.style.backgroundColor = 'var(--verde-tabela-IMC)';
         tituloIMC.innerHTML = 'Peso Ideal';
         textoIMC.innerHTML = 'Parabéns por manter um peso saudável! Estar dentro da faixa de peso ideal traz uma série de benefícios, como melhor saúde cardiovascular, maior energia e menor risco de doenças crônicas. Continue com seus hábitos saudáveis, pois estão contribuindo para uma vida plena e ativa.';
+    //sobre peso
     } else if (imc < 30) {
         imcUsuario.innerHTML = imc.toFixed(2);
         alturaUsuario.innerHTML = (inputAlturaUsuario / 100).toFixed(2);
@@ -35,6 +39,7 @@ function mostrarResultadoIMC(imc) {
         containerIMC.style.backgroundColor = 'var(--laranja-tabela-IMC)';
         tituloIMC.innerHTML = 'Sobrepeso';
         textoIMC.innerHTML = 'O sobrepeso pode aumentar significativamente o risco de desenvolver condições como diabetes, doenças cardíacas e hipertensão. Priorize uma dieta equilibrada e a prática regular de exercícios para reduzir esse risco. Pequenas mudanças podem fazer uma grande diferença na sua saúde a longo prazo.';
+    //obeso
     } else {
         imcUsuario.innerHTML = imc.toFixed(2);
         alturaUsuario.innerHTML = (inputAlturaUsuario / 100).toFixed(2);
@@ -45,7 +50,7 @@ function mostrarResultadoIMC(imc) {
     }
 }
 
-
+//mostra as receitas
 function receitaRecomendada (imc) {
     let cafeManha = document.querySelector('#texto-apresentacao-cafe-manha');
     let almoco = document.querySelector('#texto-apresentacao-almoco');
@@ -76,14 +81,14 @@ function receitaRecomendada (imc) {
     let textosPerderMassaLacheTarde = ['1 ovo de galinha 30g goma de tapioca', '1 colher de sopa de iogurte natural', '50g queijo, minas frescal, padrão'];
     let textosPerderMassaJantar = ['80g batata doce ou inglesa', '100g filé de frango grelhado', 'Mix de vegetais: abobrinha, aspargos, brócolis, chuchu, jiló, quiabo, pimentão', 'Salada de folhas verdes: Alface, Americana, Crespa, Roxa, Agrião à vontadee de oliva extra virgem: Fio de Azeite'];
     let textosPerderMassaCeia = ['200ml de iogurte natural 120g de maça, morango, banana', '1 colher de sobremesa de granola sem açucar'];
-
+    //cria a listagem abaixo do peso nos cards do cardapio
     if (imc < 18.5) {
         cafeManha.innerHTML = 'Comece o dia com uma refeição substancial para fornecer energia e apoiar o crescimento muscular.';
         almoco.innerHTML = 'Recarregue seu corpo com uma refeição rica em nutrientes para promover o ganho de massa muscular.';
         lancheTarde.innerHTML = 'Reabasteça seu corpo com um lanche energético para suportar seus objetivos de ganho de massa.';
         jantar.innerHTML = 'Promova a recuperação muscular durante a noite com uma refeição rica em nutrientes para suportar o crescimento muscular.';
         ceia.innerHTML = 'Termine o dia com uma fonte adicional de proteínas para apoiar a recuperação muscular durante a noite.';
-
+        //cada FOR é responsavel por criar as listas de cardapio
         textosGanharMassaCafeManha.forEach(function(texto) {
             let itemLista = document.createElement('li');
             itemLista.textContent = texto;
@@ -113,7 +118,7 @@ function receitaRecomendada (imc) {
             itemLista.textContent = texto;
             itensCeia.appendChild(itemLista);
         });
-
+        //cria a listagem peso ideal nos cards do cardapio
     } else if (imc < 24.9) {
         cafeManha.innerHTML = 'Inicie o dia com uma refeição equilibrada para sustentar seu peso atual.';
         almoco.innerHTML = 'Desfrute de uma refeição nutritiva e satisfatória para manter seu peso atual.';
@@ -121,6 +126,7 @@ function receitaRecomendada (imc) {
         jantar.innerHTML = 'Encerre o dia com uma refeição balanceada para manter seu peso atual.';
         ceia.innerHTML = 'Termine o dia com uma opção leve para manter seu equilíbrio calórico.';
 
+        //cada FOR é responsavel por criar as listas de cardapio
         textosManterMassaCafeManha.forEach(function(texto) {
             let itemLista = document.createElement('li');
             itemLista.textContent = texto;
@@ -150,7 +156,7 @@ function receitaRecomendada (imc) {
             itemLista.textContent = texto;
             itensCeia.appendChild(itemLista);
         });
-
+        //cria a listagem sobre peso nos cards do cardapio
     } else {
         cafeManha.innerHTML = 'Inicie o dia com uma opção leve e nutritiva para apoiar seus objetivos de perda de peso.';
         almoco.innerHTML = 'Desfrute de uma refeição equilibrada e satisfatória para manter seus esforços de perda de peso.';
@@ -158,6 +164,7 @@ function receitaRecomendada (imc) {
         jantar.innerHTML = 'Encerre o dia com uma refeição leve e balanceada para manter seu progresso na perda de peso.';
         ceia.innerHTML = 'Escolha uma opção leve para sua ceia, mantendo-se alinhado com seus objetivos de perda de peso.';
 
+        //cada FOR é responsavel por criar as listas de cardapio
         textosPerderMassaCafeManha.forEach(function(texto) {
             let itemLista = document.createElement('li');
             itemLista.textContent = texto;
@@ -191,7 +198,7 @@ function receitaRecomendada (imc) {
     } 
 } 
 
-
+//chamada das funções
 const calcular = document.querySelector('#btnCalcularIMC');
 
 calcular.addEventListener('click', () => {
