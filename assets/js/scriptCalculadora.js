@@ -50,6 +50,12 @@ function mostrarResultadoIMC(imc) {
     }
 }
 
+function limparLista(ulElement) {
+    while (ulElement.firstChild) {
+        ulElement.removeChild(ulElement.firstChild);
+    }
+}
+
 //mostra as receitas
 function receitaRecomendada (imc) {
     let cafeManha = document.querySelector('#texto-apresentacao-cafe-manha');
@@ -63,6 +69,12 @@ function receitaRecomendada (imc) {
     let itensLancheTarde = document.querySelector('#itens-lanche-tarde');
     let itensJantar = document.querySelector('#itens-jantar');
     let itensCeia = document.querySelector('#itens-ceia');
+
+    limparLista(itensCafeManha);
+    limparLista(itensAlmoco);
+    limparLista(itensLancheTarde);
+    limparLista(itensJantar);
+    limparLista(itensCeia);
 
     let textosGanharMassaCafeManha = ['40g de tapioca com 3 ovos', '50g de aveia com 1 ou 2 frutas']
     let textosGanharMassaAlmoco = ['200g de arroz branco cozido', '100g de feijão carioca', '80g de algum tipo de vegetal', '150g de carne vermelha', 'Mix de vegetais: abobrinha, aspargos, brócolis, chuchu, jíló, quiabo, pimentão, à vontade', 'Salada à vontada.'];
@@ -133,25 +145,25 @@ function receitaRecomendada (imc) {
             itensCafeManha.appendChild(itemLista);
         });
 
-        textosManterMassaCafeManha.forEach(function(texto) {
+        textosManterMassaAlmoco.forEach(function(texto) {
             let itemLista = document.createElement('li');
             itemLista.textContent = texto;
             itensAlmoco.appendChild(itemLista);
         });
 
-        textosManterMassaCafeManha.forEach(function(texto) {
+        textosManterMassaLacheTarde.forEach(function(texto) {
             let itemLista = document.createElement('li');
             itemLista.textContent = texto;
             itensLancheTarde.appendChild(itemLista);
         });
 
-        textosManterMassaCafeManha.forEach(function(texto) {
+        textosManterMassaJantar.forEach(function(texto) {
             let itemLista = document.createElement('li');
             itemLista.textContent = texto;
             itensJantar.appendChild(itemLista);
         });
 
-        textosManterMassaCafeManha.forEach(function(texto) {
+        textosManterMassaCeia.forEach(function(texto) {
             let itemLista = document.createElement('li');
             itemLista.textContent = texto;
             itensCeia.appendChild(itemLista);
@@ -201,15 +213,22 @@ function receitaRecomendada (imc) {
 //chamada das funções
 const calcular = document.querySelector('#btnCalcularIMC');
 
+
+
 calcular.addEventListener('click', () => {
     const elementoOculto = document.querySelector('.elemento-oculto');
-    let inputAlturaUsuario = document.querySelector('#inputAltura').value;
-    let inputPesoUsuario = document.querySelector('#inputPeso').value;
+    let inputAlturaUsuario = parseFloat(document.querySelector('#inputAltura').value);
+    let inputPesoUsuario = parseFloat(document.querySelector('#inputPeso').value);
     let imc = calcularIMC(inputPesoUsuario, inputAlturaUsuario);
 
-    elementoOculto.style.display = 'flex';
-    elementoOculto.scrollIntoView({ behavior: "smooth" });  
+    if (isNaN(inputAlturaUsuario) || isNaN(inputPesoUsuario)) {
+        
+        window.alert('Por favor, insira números válidos para altura e peso.');
+    } else {
+        elementoOculto.style.display = 'flex';
+        elementoOculto.scrollIntoView({ behavior: "smooth" }); 
+    }
 
     mostrarResultadoIMC(imc);
-    receitaRecomendada(imc)
-})
+    receitaRecomendada(imc);
+});
